@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace posMenu
 {
@@ -18,9 +19,9 @@ namespace posMenu
 			InitializeComponent();
 		}
 
-		public Form4(SqlConnection con)
+		public Form4(MySqlConnection con)
 		{
-			Con = con;
+	
 		}
 
 		public SqlConnection Con { get; }

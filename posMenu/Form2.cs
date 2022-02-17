@@ -2,22 +2,23 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace posMenu
 {
   public partial class Form2 : Form
   {
-    SqlConnection con;
-    SqlCommand cmd;
-    SqlDataAdapter adt;
+    MySqlConnection con;
+    MySqlCommand cmd;
+    MySqlDataAdapter adt;
     string sql;
-    public Form2(SqlConnection con)
+    public Form2(MySqlConnection con)
     {
       InitializeComponent();
       this.con = con;
@@ -30,10 +31,10 @@ namespace posMenu
       // TODO: 이 코드는 데이터를 'posDBDataSet.TBposmenu' 테이블에 로드합니다. 필요 시 이 코드를 이동하거나 제거할 수 있습니다.
       // this.tBposmenuTableAdapter.Fill(this.posDBDataSet.TBposmenu);
 
-      sql = "select * from TBposmenu ";
-      cmd = new SqlCommand(sql, con);
+      sql = "select * from dc_posmenu ";
+      cmd = new MySqlCommand(sql, con);
 
-      adt = new SqlDataAdapter(cmd);
+      adt = new MySqlDataAdapter(cmd);
       DataTable tb = new DataTable();
       adt.Fill(tb);
       dataGridView1.DataSource = tb.DefaultView;

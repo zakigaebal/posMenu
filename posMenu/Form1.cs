@@ -8,21 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace posMenu
 {
 	public partial class Form1 : Form
 	{
-    SqlConnection con;
-    SqlCommand cmd;
-    SqlDataReader reader;
+    MySqlConnection con;
+    MySqlCommand cmd;
+    MySqlDataReader reader;
     string sql;
+
     public Form1()
 		{
       InitializeComponent();
-      //string constr = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\exCS\\posSystem\\posDB.mdf;Integrated Security=True;Connect Timeout=30";
-      //con = new SqlConnection(constr);
-      //con.Open();
+      string constr = "datasource=127.0.0.1;port=3306;database=dawoon;username=root;password=ekdnsel;Charset=utf8";
+      con = new MySqlConnection(constr);
+      con.Open();
     }
 
     private void menuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,30 +44,24 @@ namespace posMenu
     private void checkToolStripMenuItem_Click(object sender, EventArgs e)
     {
       // Check 화면
-      Form4 frm4 = new Form4(con);
-      frm4.Show();
     }
 
     private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)
     {
       // 화면 종료
-      if (con.State != ConnectionState.Closed)
-        con.Close();
-      this.Close();
+     
     }
 
     private void 상품별매출ToolStripMenuItem_Click(object sender, EventArgs e)
     {
       // 상품별 매출
-      Form5 frm5 = new Form5(con);
-      frm5.Show();
+    
     }
 
     private void 기간별매출ToolStripMenuItem_Click(object sender, EventArgs e)
     {
       // 기간별 매출
-      Form6 frm6 = new Form6(con);
-      frm6.Show();
+    
     }
 
     private void button1_Click(object sender, EventArgs e)
@@ -76,9 +72,9 @@ namespace posMenu
       if (con.State != ConnectionState.Open)
         con.Open();
 
-      sql = "select * from TBposmenu " +
+      sql = "select * from posmenu " +
           " where id= '" + value1 + "' ";
-      cmd = new SqlCommand(sql, con);
+      cmd = new MySqlCommand(sql, con);
 
       reader = cmd.ExecuteReader();
       while (reader.Read())
@@ -110,9 +106,9 @@ namespace posMenu
         value3 = txtOption.Text;
         value4 = txtOption.Text;
 
-        sql = "insert into TBposmenu " +
+        sql = "insert into dc_posmenu " +
             " values('" + value1 + "', N'" + value2 + "', '" + value3 + "', '" + value4 + "')";
-        cmd = new SqlCommand(sql, con);
+        cmd = new MySqlCommand(sql, con);
         cmd.ExecuteNonQuery();
 
         if (con.State != ConnectionState.Closed)
@@ -131,15 +127,15 @@ namespace posMenu
       string value1, value2, value3, value4;
       value1 = textBox1.Text;
       value2 = textBox2.Text;
-      value3 = txtOption.Text;
+      value3 = textBox4.Text;
       value4 = txtOption.Text;
 
-      sql = "update TBposmenu " +
+      sql = "update dc_posmenu " +
           " set name = N'" + value2 + "', " +
           " price = '" + value3 + "', " +
           " options = '" + value4 + "' " +
-          " where id = '" + value1 + "' ";
-      cmd = new SqlCommand(sql, con);
+          " where posseq = '" + value1 + "' ";
+      cmd = new MySqlCommand(sql, con);
       cmd.ExecuteNonQuery();
 
       if (con.State != ConnectionState.Closed)
@@ -158,9 +154,9 @@ namespace posMenu
 
       string value1 = textBox1.Text;
 
-      sql = "delete from TBposmenu " +
+      sql = "delete from dc_posmenu " +
           " where id = '" + value1 + "' ";
-      cmd = new SqlCommand(sql, con);
+      cmd = new MySqlCommand(sql, con);
       cmd.ExecuteNonQuery();
 
       if (con.State != ConnectionState.Closed)
@@ -208,6 +204,11 @@ namespace posMenu
     }
 
     private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void Form1_Load(object sender, EventArgs e)
 		{
 
 		}

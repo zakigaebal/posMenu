@@ -30,12 +30,12 @@
 		{
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.주문ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.매출ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.checkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.도움말ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.종료ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.매출ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.상품별매출ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.기간별매출ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.label1 = new System.Windows.Forms.Label();
@@ -48,8 +48,8 @@
 			this.textBox4 = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.radioButton1 = new System.Windows.Forms.RadioButton();
 			this.radioButton2 = new System.Windows.Forms.RadioButton();
+			this.radioButton1 = new System.Windows.Forms.RadioButton();
 			this.button2 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.button4 = new System.Windows.Forms.Button();
@@ -65,7 +65,7 @@
             this.매출ToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+			this.menuStrip1.Size = new System.Drawing.Size(598, 24);
 			this.menuStrip1.TabIndex = 1;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -81,6 +81,40 @@
 			this.주문ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
 			this.주문ToolStripMenuItem.Text = "주문";
 			// 
+			// menuToolStripMenuItem
+			// 
+			this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+			this.menuToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+			this.menuToolStripMenuItem.Text = "Menu";
+			this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
+			// 
+			// eventToolStripMenuItem
+			// 
+			this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
+			this.eventToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+			this.eventToolStripMenuItem.Text = "Event";
+			this.eventToolStripMenuItem.Click += new System.EventHandler(this.eventToolStripMenuItem_Click);
+			// 
+			// checkToolStripMenuItem
+			// 
+			this.checkToolStripMenuItem.Name = "checkToolStripMenuItem";
+			this.checkToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+			this.checkToolStripMenuItem.Text = "Check";
+			this.checkToolStripMenuItem.Click += new System.EventHandler(this.checkToolStripMenuItem_Click);
+			// 
+			// 도움말ToolStripMenuItem
+			// 
+			this.도움말ToolStripMenuItem.Name = "도움말ToolStripMenuItem";
+			this.도움말ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+			this.도움말ToolStripMenuItem.Text = "도움말";
+			// 
+			// 종료ToolStripMenuItem
+			// 
+			this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
+			this.종료ToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+			this.종료ToolStripMenuItem.Text = "종료";
+			this.종료ToolStripMenuItem.Click += new System.EventHandler(this.종료ToolStripMenuItem_Click);
+			// 
 			// 매출ToolStripMenuItem
 			// 
 			this.매출ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -89,48 +123,20 @@
 			this.매출ToolStripMenuItem.Name = "매출ToolStripMenuItem";
 			this.매출ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
 			this.매출ToolStripMenuItem.Text = "매출";
-			// 
-			// menuToolStripMenuItem
-			// 
-			this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
-			this.menuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.menuToolStripMenuItem.Text = "Menu";
-			// 
-			// eventToolStripMenuItem
-			// 
-			this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
-			this.eventToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.eventToolStripMenuItem.Text = "Event";
-			// 
-			// checkToolStripMenuItem
-			// 
-			this.checkToolStripMenuItem.Name = "checkToolStripMenuItem";
-			this.checkToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.checkToolStripMenuItem.Text = "Check";
-			// 
-			// 도움말ToolStripMenuItem
-			// 
-			this.도움말ToolStripMenuItem.Name = "도움말ToolStripMenuItem";
-			this.도움말ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.도움말ToolStripMenuItem.Text = "도움말";
-			// 
-			// 종료ToolStripMenuItem
-			// 
-			this.종료ToolStripMenuItem.Name = "종료ToolStripMenuItem";
-			this.종료ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.종료ToolStripMenuItem.Text = "종료";
+			this.매출ToolStripMenuItem.Click += new System.EventHandler(this.상품별매출ToolStripMenuItem_Click);
 			// 
 			// 상품별매출ToolStripMenuItem
 			// 
 			this.상품별매출ToolStripMenuItem.Name = "상품별매출ToolStripMenuItem";
-			this.상품별매출ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.상품별매출ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
 			this.상품별매출ToolStripMenuItem.Text = "상품별 매출";
 			// 
 			// 기간별매출ToolStripMenuItem
 			// 
 			this.기간별매출ToolStripMenuItem.Name = "기간별매출ToolStripMenuItem";
-			this.기간별매출ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.기간별매출ToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
 			this.기간별매출ToolStripMenuItem.Text = "기간별 매출";
+			this.기간별매출ToolStripMenuItem.Click += new System.EventHandler(this.기간별매출ToolStripMenuItem_Click);
 			// 
 			// label1
 			// 
@@ -157,6 +163,7 @@
 			this.button1.TabIndex = 4;
 			this.button1.Text = "조회";
 			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// label2
 			// 
@@ -218,17 +225,6 @@
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "옵션";
 			// 
-			// radioButton1
-			// 
-			this.radioButton1.AutoSize = true;
-			this.radioButton1.Location = new System.Drawing.Point(7, 32);
-			this.radioButton1.Name = "radioButton1";
-			this.radioButton1.Size = new System.Drawing.Size(59, 16);
-			this.radioButton1.TabIndex = 0;
-			this.radioButton1.TabStop = true;
-			this.radioButton1.Text = "아이스";
-			this.radioButton1.UseVisualStyleBackColor = true;
-			// 
 			// radioButton2
 			// 
 			this.radioButton2.AutoSize = true;
@@ -239,6 +235,19 @@
 			this.radioButton2.TabStop = true;
 			this.radioButton2.Text = "핫";
 			this.radioButton2.UseVisualStyleBackColor = true;
+			this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+			// 
+			// radioButton1
+			// 
+			this.radioButton1.AutoSize = true;
+			this.radioButton1.Location = new System.Drawing.Point(7, 32);
+			this.radioButton1.Name = "radioButton1";
+			this.radioButton1.Size = new System.Drawing.Size(59, 16);
+			this.radioButton1.TabIndex = 0;
+			this.radioButton1.TabStop = true;
+			this.radioButton1.Text = "아이스";
+			this.radioButton1.UseVisualStyleBackColor = true;
+			this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
 			// 
 			// button2
 			// 
@@ -248,6 +257,7 @@
 			this.button2.TabIndex = 4;
 			this.button2.Text = "등록";
 			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click);
 			// 
 			// button3
 			// 
@@ -257,6 +267,7 @@
 			this.button3.TabIndex = 4;
 			this.button3.Text = "수정";
 			this.button3.UseVisualStyleBackColor = true;
+			this.button3.Click += new System.EventHandler(this.button3_Click);
 			// 
 			// button4
 			// 
@@ -266,6 +277,7 @@
 			this.button4.TabIndex = 4;
 			this.button4.Text = "삭제";
 			this.button4.UseVisualStyleBackColor = true;
+			this.button4.Click += new System.EventHandler(this.button4_Click);
 			// 
 			// button5
 			// 
@@ -275,12 +287,13 @@
 			this.button5.TabIndex = 4;
 			this.button5.Text = "종료";
 			this.button5.UseVisualStyleBackColor = true;
+			this.button5.Click += new System.EventHandler(this.button5_Click);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.ClientSize = new System.Drawing.Size(598, 321);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
@@ -299,6 +312,7 @@
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "Form1";
 			this.Text = "메뉴 등록하기";
+			this.Load += new System.EventHandler(this.Form1_Load);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
